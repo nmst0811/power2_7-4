@@ -1,136 +1,26 @@
-*, *::before, *::after {
+/* main.css */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-
-
-h1 {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 4em;
-  margin: 20%, -50%;
-  line-height: 0px;
-  -webkit-text-stroke: 2px #EB6182;
-  color: #fff; 
-}
-
-.notfound {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 0.9em;
-  margin-bottom: 5%;
-  line-height: 0px;
-  -webkit-text-stroke: 0.5px #EB6182;
-  color: #fff; 
-}
-
-#settingScene {
-  background-color: #fff;
-  width: 75%;
-  background-repeat: no-repeat;
-  margin: 10px auto;
-  background-position: center;
-  padding: 15%;
-  
-}
-
-.bgmSwitch {
-  width: 4em;
-  height: 2em;
-  background-color: lightgray;
-  margin: auto;
-  position: relative;
-  cursor: pointer;
-  transition: background-color .2s ease-in-out;
-}
-
-.bgmSwitch.active {
-  background-color: #f5d24b;
-}
-
-.bgmSwitch_toggle {
-  width: 1.8em;
-  height: 1.8em;
-  position: absolute;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 0.1em;
-  margin: auto;
-  box-shadow: 0.1em 0.1em 0.2em #b7b7b7, -0.1em -0.1em -0.2em #cecece;
-  transition: left .3s ease-in-out;
-}
-
-.bgmSwitch_toggle.active {
-  left: 2.1em;
-}
-
-.stage {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 20px auto;
-  width: auto;
-  height: auto;
-}
-
-.square {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  border: solid black;
-  border-width: 0 4px 4px 0;
-  cursor: pointer;;
-}
-
-.square:nth-child(-n + 6) {
-  border-width: 4px 4px 4px 0;
-  height: 54px;
-}
-
-.square:nth-child(6n + 1) {
-  border-width: 0 4px 4px 4px;
-  width: 54px;
-}
-
-.square:first-child {
-  border-width: 4px;
-  width: 54px;
-  height: 54px;
-}
-
-.stone {
-  position: absolute;
-  top: 2px;
-  bottom: 0;
-  left: 2px;
-  width: 42px;
-  height: 42px;
-  border-radius: 21px;
-  background-color: black;
-}
-
-#square-template {
-  display: none;
-}
-
-/*〇〇〇一部を変更〇〇〇*/
-
-html {
+body {
+  height: 100vh;
   margin: 0;
-  max-height: 100%;
-  padding: 0;
+  font-family: "Zen Maru Gothic", serif;
+  overflow-x: hidden;
   background-image: url(../images/Background/background.png);
-  background-size: 300%;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   text-align: center;
-  overflow-x: hidden; 
 }
 
-img {
-  -webkit-user-drag: none;
+h1 {
+  font-weight: 900;
+  font-size: 4em;
+  color: #fff;
 }
 
 #titleScene {
@@ -138,71 +28,57 @@ img {
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 20%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/*〇〇〇ここまで〇〇〇*/
-
-
-/*-----後から追加-----*/
-
-body{
-  height: 848px;
-  border-color: black;
-  overflow: hidden;
+  padding: 20vh 0;
 }
 
-footer{
-  margin:-150px;
+.moyo {
+  position: absolute;
+  width: 16vw;
 }
-
 
 #m1 {
-  position: relative;
-  right: -830px;
-  bottom: 450px;
+  top: 10vh;
+  left: 10vw;
 }
+
 #m2 {
-  position: relative;
-  right: -480px;
-  bottom: 380px;
+  top: 15vh;
+  right: 10vw;
 }
+
 #m3 {
-  position: relative;
-  right: 480px;
-  bottom: 980px;
+  top: 30vh;
+  left: 20vw;
 }
+
 #m4 {
-  position: relative;
-  right: 820px;
-  bottom: 900px;
+  top: 40vh;
+  right: 15vw;
   transform: rotate(-20deg);
 }
+
 #m5-1 {
-  position: relative;
-  right: -770px;
-  bottom: 1450px;
+  bottom: 30vh;
+  left: 5vw;
 }
+
 #m5-2 {
-  position: relative;
-  right: 880px;
-  bottom: 980px;
+  bottom: 30vh;
+  right: 5vw;
 }
+
 #m6-1 {
-  position: relative;
-  right: -900px;
-  bottom: 2250px;
+  bottom: 10vh;
+  left: 10vw;
 }
+
 #m6-2 {
-  position: relative;
-  right: -460px;
-  bottom: 2150px;
+  bottom: 15vh;
+  right: 10vw;
   transform: rotate(-180deg);
 }
+
 #m6-3 {
-  position: relative;
-  right: 660px;
-  bottom: 2130px;
+  bottom: 5vh;
+  left: 30vw;
 }
-  /*-----ここまで-----*/
