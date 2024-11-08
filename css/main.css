@@ -1,5 +1,9 @@
 *, *::before, *::after {
   box-sizing: border-box;
+
+    font-family: "Zen Maru Gothic", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 html {
@@ -27,6 +31,28 @@ img {
   margin-right: auto;
   
 }
+
+button {
+  padding: 10px 20px;
+  margin: 6px;
+  border: none;
+  border-radius: 30px; /* ボタンの丸み */
+  background-color: #ffb0f3;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* カーソルを合わせたときに大きくなる */
+  background-color: #bf8ac0; /* ホバー時の色変更（任意） */
+}
+
+button:active {
+  transform: scale(0.95); /* クリック時に縮む */
+}
+
 
 h1 {
   font-family: "Zen Maru Gothic", serif;
@@ -60,6 +86,7 @@ h1 {
   
 }
 
+
 .bgmSwitch {
   width: 4em;
   height: 2em;
@@ -90,6 +117,8 @@ h1 {
 .bgmSwitch_toggle.active {
   left: 2.1em;
 }
+
+
 
 .stage {
   display: flex;
