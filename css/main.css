@@ -123,15 +123,9 @@ h1 {
 .stage {
   display: flex;
   flex-wrap: wrap;
-<<<<<<< HEAD
-  margin: 20px auto;
-  width: auto;
-  height: auto;
-=======
   margin: 60px;
   width: 320px;
   height: 300px;
->>>>>>> 1f69d76342d60cee59db7f5228e71fbda3031980
 }
 
 .square {
