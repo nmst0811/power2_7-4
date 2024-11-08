@@ -2,31 +2,7 @@
   box-sizing: border-box;
 }
 
-html {
-  margin: 0;
-  max-height: 100%;
-  padding: 0;
-  background-image: url(../images/Background/background.png);
-  background-size: 300%;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-}
 
-img {
-  -webkit-user-drag: none;
-}
-
-#titleScene {
-  background-image: url(../images/Background/background_white.png);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
 
 h1 {
   font-family: "Zen Maru Gothic", serif;
@@ -59,27 +35,6 @@ h1 {
   padding: 15%;
   
 }
-button {
-  padding: 10px 20px;
-  margin: 6px;
-  border: none;
-  border-radius: 30px; /* ボタンの丸み */
-  background-color: #ffb0f3;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-button:hover {
-  transform: scale(1.05); /* カーソルを合わせたときに大きくなる */
-  background-color: #c878c9; /* ホバー時の色変更（任意） */
-}
-
-button:active {
-  transform: scale(0.95); /* クリック時に縮む */
-}
-
 
 .bgmSwitch {
   width: 4em;
@@ -160,6 +115,94 @@ button:active {
   display: none;
 }
 
-.moyou1 {
-  height: 10%;
+/*〇〇〇一部を変更〇〇〇*/
+
+html {
+  margin: 0;
+  max-height: 100%;
+  padding: 0;
+  background-image: url(../images/Background/background.png);
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  overflow-x: hidden; 
 }
+
+img {
+  -webkit-user-drag: none;
+}
+
+#titleScene {
+  background-image: url(../images/Background/background_white.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*〇〇〇ここまで〇〇〇*/
+
+
+/*-----後から追加-----*/
+
+body{
+  height: 848px;
+  border-color: black;
+  overflow: hidden;
+}
+
+footer{
+  margin:-150px;
+}
+
+
+#m1 {
+  position: relative;
+  right: -830px;
+  bottom: 450px;
+}
+#m2 {
+  position: relative;
+  right: -480px;
+  bottom: 380px;
+}
+#m3 {
+  position: relative;
+  right: 480px;
+  bottom: 980px;
+}
+#m4 {
+  position: relative;
+  right: 820px;
+  bottom: 900px;
+  transform: rotate(-20deg);
+}
+#m5-1 {
+  position: relative;
+  right: -770px;
+  bottom: 1450px;
+}
+#m5-2 {
+  position: relative;
+  right: 880px;
+  bottom: 980px;
+}
+#m6-1 {
+  position: relative;
+  right: -900px;
+  bottom: 2250px;
+}
+#m6-2 {
+  position: relative;
+  right: -460px;
+  bottom: 2150px;
+  transform: rotate(-180deg);
+}
+#m6-3 {
+  position: relative;
+  right: 660px;
+  bottom: 2130px;
+}
+  /*-----ここまで-----*/
