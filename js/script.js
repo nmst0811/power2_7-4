@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const settingScene = document.getElementById('settingScene');
   const gameScene = document.getElementById('gameScene');
   const questionButton = document.getElementById('questionButton');
-  
     // 設定ボタンがクリックされたときの処理!!!!!!!!
     settingButton.addEventListener('click', () => {
       // タイトル画面を非表示にする
@@ -39,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(banmen[4][3]);
   console.log(banmen[4][4]);
   console.log(banmen[3][3]);
-
   function loadCSV(filePath, callback) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', filePath, true);
@@ -77,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const stage = document.getElementById("stage");
   const squareTemplate = document.getElementById("square-template");
+  
+//getReversibleStones関数のすぐ上に書きましょう
 
   const shokibanmen = () =>{
     put_stone(15,'white');
@@ -114,22 +114,29 @@ document.addEventListener('DOMContentLoaded', () => {
       defaultState = 0;
     }
 
-    stone.setAttribute("data-state", defaultState);
-    //ここから追加
-    stone.setAttribute("data-index", i); //インデックス番号をHTML要素に保持させる
-    stoneStateList.push(defaultState); //初期値を配列に格納
-      square.addEventListener('click', () => {
-        onClickSquare(i);
-      })
-    }
     shokibanmen();
     const parent = document.getElementById('parent');
   };
 
   
   // マス目を作成
-  createSquares();
+  createSquares()
+stone.setAttribute("data-state", defaultState);
 
+  };
+
+
+window.onload = () => {
+    createSquares();
+    passButton.addEventListener("click", () => {
+      currentColor = 3 - currentColor;
+      if (currentColor === 1) {
+        currentTurnText.textContent = "黒";
+      } else {
+        currentTurnText.textContent = "白"
+      }
+    })
+  }
   // 設定ボタンがクリックされたときの処理
   questionButton.addEventListener('click', () => {
     // CSVファイルを読み込んで問題を表示

@@ -59,27 +59,6 @@ h1 {
   padding: 15%;
   
 }
-button {
-  padding: 10px 20px;
-  margin: 6px;
-  border: none;
-  border-radius: 30px; /* ボタンの丸み */
-  background-color: #ffb0f3;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-button:hover {
-  transform: scale(1.05); /* カーソルを合わせたときに大きくなる */
-  background-color: #c878c9; /* ホバー時の色変更（任意） */
-}
-
-button:active {
-  transform: scale(0.95); /* クリック時に縮む */
-}
-
 
 .bgmSwitch {
   width: 4em;
@@ -115,9 +94,15 @@ button:active {
 .stage {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
   margin: 20px auto;
   width: auto;
   height: auto;
+=======
+  margin: 60px;
+  width: 320px;
+  height: 300px;
+>>>>>>> 1f69d76342d60cee59db7f5228e71fbda3031980
 }
 
 .square {
@@ -144,7 +129,6 @@ button:active {
   width: 54px;
   height: 54px;
 }
-
 .stone {
   position: absolute;
   top: 2px;
@@ -153,7 +137,18 @@ button:active {
   width: 42px;
   height: 42px;
   border-radius: 21px;
+}
+
+.stone[data-state="0"] {
+  display: none;
+}
+
+.stone[data-state="1"] {
   background-color: black;
+}
+
+.stone[data-state="2"] {
+  background-color: white;
 }
 
 #square-template {
