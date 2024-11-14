@@ -20,6 +20,7 @@ function sentakuFunction(event) {
 }
 async function quizdasu() {
     try {
+        console.log("quizdasu");
         if(lock){
         const response = await fetch('JSON/questions.json');
         const questionData = await response.json();
@@ -35,6 +36,7 @@ async function quizdasu() {
 // 問題をロードする関数
 function loadQuestion(questionData) {
     return new Promise((resolve) => {
+        console.log("loadQuesution");
         const randomIndex = Math.floor(Math.random() * questionData.length);
         const selectedQuestion = questionData[randomIndex];
         console.log(selectedQuestion.答え)
@@ -45,13 +47,16 @@ function loadQuestion(questionData) {
         quizElement.style.display = 'block'; // 要素を表示
 
         if (selectedQuestion.問題形式 === "一問一答") {
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
             questionArea.innerHTML +='<input type="text" id="kaitou" placeholder="ここに文字を入力" />'
         }
         else if(selectedQuestion.問題形式 === "二択"){
+
             questionArea.innerHTML += '<button class="nitaku" data-id="１">1番</button>';
             questionArea.innerHTML += '<button class="nitaku" data-id="２">2番</button>';
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const nitaku = document.querySelectorAll(".nitaku");
             nitaku.forEach(button => {
                 button.addEventListener('click', nitakuFunction);
@@ -61,7 +66,8 @@ function loadQuestion(questionData) {
             questionArea.innerHTML += '<button class="sentaku" data-id="１">1番</button>';
             questionArea.innerHTML += '<button class="sentaku" data-id="２">2番</button>';
             questionArea.innerHTML += '<button class="sentaku" data-id="３">3番</button>';
-            questionArea.innerHTML += '<button id="answer">答えを確認</button>';
+            questionArea.innerHTML +='<div id="answer" class="button"><a href="#">回答</a></div>'
+            // questionArea.innerHTML += '<button id="answer">答えを確認</button>';
             const sentaku = document.querySelectorAll(".sentaku");
             sentaku.forEach(button => {
                 button.addEventListener('click', sentakuFunction);
@@ -87,6 +93,7 @@ function loadQuestion(questionData) {
 
 // 答えを確認する関数
 function checkAnswer(correctAnswer, format) {
+    console.log("checkAnswer");
     const  seikai= document.getElementById('seikai');
     const  matigai= document.getElementById('matigai');
     if (format === "一問一答") {
@@ -102,7 +109,7 @@ function checkAnswer(correctAnswer, format) {
         } else {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             hantei=false;
         }
 
@@ -121,7 +128,7 @@ function checkAnswer(correctAnswer, format) {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
             hantei=false;
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             
         }
         
@@ -140,7 +147,7 @@ function checkAnswer(correctAnswer, format) {
             matigai.currentTime = 0; // 音声の再生位置をリセット
             matigai.play(); // 音を再生
             hantei=false;
-            alert("残念、不正解です。回答"+correctAnswer);
+            alert("残念、不正解です。正解は..."+correctAnswer);
             
         }
     }
