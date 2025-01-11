@@ -51,31 +51,16 @@ function loadQuestion(questionData,pos) {
     var Index="0";
     console.log(pos)
     return new Promise((resolve) => {
-        switch(pos.x){
-        case 0:
-        case 5:basho[0]=0;break;
-        case 1:
-        case 4:basho[0]=1;break;
-        case 2:
-        case 3:basho[0]=2;break;
-        }
-        switch(pos.y){
-            case 0:
-            case 5:basho[1]=0;break;
-            case 1:
-            case 4:basho[1]=1;break;
-            case 2:
-            case 3:basho[1]=2;break;
-            default:basho[1]=2
+        if(pos.x==5||pos.x==0||pos.y==5||pos.y==0){
+            if((pos.x==5||pos.x==0)&&(pos.y==5||pos.y==0)){
+                Index=2;
             }
-    
-    switch(basho[1]+basho[0]){//場所で難易度を調整してる
-        case 0: Index=2;break;
-        case 1: 
-        case 2: Index=1;break;
-        case 3:
-        case 4: Index=0;break;
-        default:Index=0;break;
+            else{
+                Index=1;
+            }
+        }
+        else{
+            Index=0
         }
         Index+=nanidohosei
         const selectionData=questionData.filter(item=> item.level == Index);
@@ -86,8 +71,7 @@ function loadQuestion(questionData,pos) {
         console.log(selectedQuestion.答え)
         const questionArea = document.getElementById('question-area');
         const answerArea = document.getElementById('answer-area');
-        questionArea.innerHTML = '<h3 class="Q_name">問題形式:' + selectedQuestion.問題形式 + '</h3>' +
-                                '<p class="Q_main">' + selectedQuestion.問題文 + '</p>';
+        questionArea.innerHTML = "<h3 class='Q_name'>問題</h3><p class='Q_main'>" + selectedQuestion.問題文 + "</p>";
         const quizElement = document.getElementById('quiz');
         quizElement.style.display = 'block'; // 要素を表示
 
@@ -152,7 +136,7 @@ function checkAnswer(correctAnswer, format) {
         }
 
         document.getElementById('kaitou').value = '';
-    } else if (format === "択一(文章)" ) {
+    } else if (format === "三択" ) {
         userAnswer = sentaku;
         // 択一の確認
         if (userAnswer=== correctAnswer.charAt(0)) {

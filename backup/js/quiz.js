@@ -92,7 +92,7 @@ function loadQuestion(questionData,pos) {
                 button.addEventListener('click', nitakuFunction);
             });
         }
-        else if(selectedQuestion.問題形式 === "択一(文章)"){
+        else if(selectedQuestion.問題形式 === "三択"){
             let sentakuadata=selectedQuestion.選択肢.split(" ");
             answerArea.innerHTML += '<button class="sentaku" data-id="１">'+sentakuadata[0]+'</button>';
             answerArea.innerHTML += '<button class="sentaku" data-id="２">'+sentakuadata[1]+'</button>';
@@ -143,7 +143,7 @@ function checkAnswer(correctAnswer, format) {
         }
 
         document.getElementById('kaitou').value = '';
-    } else if (format === "択一(文章)" ) {
+    } else if (format === "三択" ) {
         userAnswer = sentaku;
         // 択一の確認
         if (userAnswer=== correctAnswer.charAt(0)) {
